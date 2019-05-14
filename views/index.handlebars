@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Order Up!</h1>
+    <hr>
+
+    <div class="form-group">
+        <label for="burgerInput">What kind of burger would you like to eat?</label>
+        <input type="text" class="form-control" name="burgerInput" id="burgerInput" aria-describedby="helpId"
+            placeholder="...delicious">
+        <small id="helpId" class="form-text text-muted">Help text</small>
+        <button type="submit" id="submitBurger" class="btn btn-primary">Submit</button>
+    </div>
+
+    <hr>
+    <ul>
+        <h2>Burger Options</h2>
+        {{#each burgers}}
+        {{#unless devour}}
+        <li>
+            <button type="button" class="btn btn-success" data-id="{{this.id}}" data-devour={{this.devour}}>
+                {{this.name}}
+            </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+
+    <h2>Already Eaten</h2>
+    <ul>
+        {{#each buregers}}
+        {{#if devour}}
+        <li>
+            <button type="button" class="btn btn-danger" data-id="{{this.id}}">
+                {{this.name}}
+            </button>
+        </li>
+        {{/if}}
+        {{/each}}
+
+    </ul>
+</div>
