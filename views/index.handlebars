@@ -2,17 +2,19 @@
     <h1>Order Up!</h1>
     <hr>
 
-    <div class="form-group">
-        <label for="burgerInput">What kind of burger would you like to eat?</label>
-        <input type="text" class="form-control" name="burgerInput" id="burgerInput" aria-describedby="helpId"
-            placeholder="...delicious">
-        <small id="helpId" class="form-text text-muted">Help text</small>
-        <button type="submit" id="submitBurger" class="btn btn-primary">Submit</button>
-    </div>
+    <form>
+
+        <div class="form-group">
+            <label for="burgerInput">What kind of burger would you like to eat?</label>
+            <input type="text" class="form-control" name="burgerInput" id="burgerInput"
+                placeholder="...sounds delicious">
+            <button type="submit" id="submitBurger" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
 
     <hr>
+    <h2>Eat Da Burger?</h2>
     <ul>
-        <h2>Burger Options</h2>
         {{#each burgers}}
         {{#unless devour}}
         <li>
@@ -24,7 +26,7 @@
         {{/each}}
     </ul>
 
-    <h2>Already Eaten</h2>
+    <h2>Some Guy Ate Da Burger!</h2>
     <ul>
         {{#each buregers}}
         {{#if devour}}
